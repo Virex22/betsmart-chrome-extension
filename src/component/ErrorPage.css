@@ -1,0 +1,77 @@
+/*
+<div className="error-container">
+            <div className="error-hero-container">
+                <div className="error-hero">
+                    <img src="icon-full.png" alt="logo" className="error-logo" />
+                    <desc className="error-desc">BetSmart Analyser</desc>
+                </div>
+            </div>
+            <div className="error-content">
+                <h1 className="error-title">Cette extension ne fonctionne que sur Betclic dans la section Football</h1>
+                <h2 className="error-subtitle">Rendez-vous sur la page pour pouvoir utiliser l'extension</h2>
+            </div>
+        </div>
+        */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-hero-container {
+  flex: 1; /* Utilisez 35% de la hauteur */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-hero {
+  text-align: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.error-logo {
+  width: 100px;
+  height: 100px;
+}
+
+.error-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 40px 0 0 0;
+  text-align: center;
+  color: #007acc;
+}
+
+.error-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  color: #444;
+}
+
+.error-content {
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.error-desc {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  color: #444;
+}
