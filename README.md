@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# BetSmart Analyzer - Extension Chrome pour les paris sportifs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Aperçu
 
-## Available Scripts
+BetSmart Analyzer est une extension Chrome qui vous aide à analyser les matchs de football en cours pour prendre des décisions de paris plus éclairées. L'extension récupère des données en temps réel sur les matchs, calcule les statistiques pertinentes et fournit des indicateurs pour vous aider à identifier les opportunités de paris.
 
-In the project directory, you can run:
+## Fonctionnalités
 
-### `npm start`
+- Récupération des données en temps réel sur les matchs de football.
+- Calcul des statistiques de match telles que le nombre de buts par minute pour invalider le pari.
+- Indicateurs pour évaluer l'intérêt des paris en fonction des statistiques.
+- Intégration de l'analyse des tendances de paris précédents.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Comment tester l'extension
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Suivez ces étapes simples pour tester BetSmart Analyzer sur votre navigateur Chrome :
 
-### `npm test`
+1. **Téléchargement du code source** :
+    - Clonez ce répertoire sur votre ordinateur
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Installation des dépendances** :
+    - Assurez-vous d'avoir Node.js et npm installés sur votre ordinateur.
+    - Ouvrez un terminal, accédez au répertoire du projet et exécutez la commande suivante pour installer les dépendances :
+      ```
+      npm install
+      ```
 
-### `npm run build`
+3. **Démarrage en mode développement** :
+    - Exécutez la commande suivante pour lancer l'extension en mode développement :
+      ```
+      npm run start
+      ```
+    - L'extension s'ouvrira dans une nouvelle fenêtre de navigateur.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Charger l'extension** :
+    - Build l'extension en exécutant la commande suivante :
+      ```
+      npm run build
+      ```
+    - Dans votre navigateur Chrome, ouvrez la page `chrome://extensions/`.
+    - Activez le mode développeur (en haut à droite).
+    - Cliquez sur "Charger l'extension non empaquetée" et sélectionnez le répertoire du projet où vous avez build l'extension.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. **Utilisation de l'extension** :
+    - Vous verrez l'icône de BetSmart Analyzer dans la barre d'outils de Chrome. Cliquez dessus pour ouvrir la popup de l'extension et commencez à l'utiliser.
