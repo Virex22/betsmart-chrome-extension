@@ -18,7 +18,15 @@
   },
   "permissions": [
     "activeTab",
-    "storage"
+    "storage",
+    "scripting"
   ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "minimum_chrome_version": "80"
 }

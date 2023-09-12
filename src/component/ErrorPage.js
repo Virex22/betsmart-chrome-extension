@@ -13,7 +13,7 @@ function ErrorPage() {
             </div>
             <div className="error-content">
                 <h1 className="error-title">Cette extension ne fonctionne que sur Betclic dans la section Football</h1>
-                <h2 className="error-subtitle">Rendez-vous sur la page pour pouvoir utiliser l'extension</h2>
+                <h2 className="error-subtitle">Rendez-vous sur cette <a href="https://www.betclic.fr/football-s1" target="_blank">page</a> pour pouvoir utiliser l'extension</h2>
             </div>
         </div>
     );
