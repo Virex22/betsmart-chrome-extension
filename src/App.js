@@ -1,6 +1,7 @@
 import './App.css';
 import {useEffect, useState} from "react";
-import ErrorPage from "./component/ErrorPage";
+import ErrorPage from "./component/error/ErrorPage";
+import SettingsPage from "./component/setting/SettingsPage";
 
 function App() {
     const [currentUrl, setCurrentUrl] = useState('');
@@ -13,9 +14,9 @@ function App() {
 
     const isOnBetClickPage = currentUrl.includes('betclic.fr/football');
     if (isOnBetClickPage) {
-        return <h1>Vous êtes sur Betclick.fr/football</h1>
+        return <SettingsPage />
     }
-    return ErrorPage();
+    return <ErrorPage />
 }
 
 

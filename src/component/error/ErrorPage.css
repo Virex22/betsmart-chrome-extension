@@ -1,17 +1,3 @@
-/*
-<div className="error-container">
-            <div className="error-hero-container">
-                <div className="error-hero">
-                    <img src="icon-full.png" alt="logo" className="error-logo" />
-                    <desc className="error-desc">BetSmart Analyser</desc>
-                </div>
-            </div>
-            <div className="error-content">
-                <h1 className="error-title">Cette extension ne fonctionne que sur Betclic dans la section Football</h1>
-                <h2 className="error-subtitle">Rendez-vous sur la page pour pouvoir utiliser l'extension</h2>
-            </div>
-        </div>
-        */
 .error-container {
   display: flex;
   flex-direction: column;
@@ -24,7 +10,7 @@
 }
 
 .error-hero-container {
-  flex: 1; /* Utilisez 35% de la hauteur */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
