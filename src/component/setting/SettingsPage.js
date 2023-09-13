@@ -13,6 +13,10 @@ function SettingsPage() {
     function handleChange() {
         setEnabled(!enabled);
         chrome.storage.sync.set({enabled: !enabled});
+        chrome.runtime.sendMessage({
+            action: "onEnabledChange",
+            enabled: !enabled
+        });
     }
 
     return (

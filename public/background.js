@@ -1,42 +1,59 @@
+// detect when a tab is updated
 
-let enabled = false;
-let tab = null;
-
+function init() {
+    chrome.tabs.query({}, function (tabs) {
+        tabs.forEach(function (tab) {
+            if (!tab.url) return;
+             if (tab.url.includes('betclic.fr/football')) {
+                console.log('Starting injection for url: ' + tab.url);
+                chrome.scripting.executeScript({
+                        target: { tabId: tab.id },
+                        files: ['runner.js']
+                    }
+                );
+            }
+        });
+    });
+}
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    // Vérifiez si la tab est en train d'être chargée (rafraîchie)
-    if (changeInfo.status === "loading") {
-        console.log("La tab a été rafraîchie !");
-        // Vous pouvez ajouter votre logique ici pour réagir au rafraîchissement de la tab
-    }
-});
-setInterval(function () {
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        // check if contain id key
-        if (!tabs[0] || !tabs[0].id || !tabs[0].url) {
-            return;
-        }
-        tab = tabs[0];
-        if (tabs[0].url.includes('betclic.fr/football')) {
-            console.log('Starting injection for url: ' + tabs[0].url);
+    if (changeInfo.status === "complete") {
+        if (!tab.url) return;
+        if (tab.url.includes('betclic.fr/football')) {
+            console.log('Starting injection for url: ' + tab.url);
             chrome.scripting.executeScript({
-                    target: { tabId: tabs[0].id },
+                    target: { tabId: tab.id },
                     files: ['runner.js']
                 }
             );
         }
-    });
-
-    chrome.storage.sync.get(['enabled'], function (result) {
-        if (result.enabled !== undefined) {
-            enabled = result.enabled;
-        }
-    });
-
-}, 1000);
-
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    if (request.action === "getDataFromStorage") {
-        sendResponse({ enabled: enabled , lastTab: tab});
     }
 });
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    if (request.action === "onEnabledChange") {
+        callInjections(request.enabled);
+    }
+    return true;
+});
+
+function callInjections(enabled) {
+    chrome.tabs.query({}, function (tabs) {
+        tabs.forEach(function (tab) {
+            if (!tab.url) return;
+            if (tab.url.includes('betclic.fr/football')) {
+                // inject script to call onEnabledChange message (not file)
+                chrome.scripting.executeScript({
+                    target: {tabId: tab.id},
+                    function: function (enabled) {
+                        onExtensionEnabledChange(enabled);
+                    },
+                    args: [ enabled ]
+                });
+            }
+        });
+    });
+}
+
+
+init();
